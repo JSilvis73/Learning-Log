@@ -1,0 +1,128 @@
+
+# 🧠 EF Core Fluent API Cheat Sheet
+
+> Use inside `protected override void OnModelCreating(ModelBuilder modelBuilder)`
+
+---
+
+## 🔗 Relationships
+
+### One-to-Many
+```csharp
+modelBuilder.Entity<Child>()
+    .HasOne(c => c.Parent)
+    .WithMany(p => p.Children)
+    .HasForeignKey(c => c.ParentId)
+    .OnDelete(DeleteBehavior.Restrict); // or Cascade, SetNull
+```
+
+### One-to-One
+```csharp
+modelBuilder.Entity<EntityA>()
+    .HasOne(a => a.EntityB)
+    .WithOne(b => b.EntityA)
+    .HasForeignKey<EntityB>(b => b.EntityAId);
+```
+
+### Many-to-Many (EF Core 5+)
+```csharp
+modelBuilder.Entity<Author>()
+    .HasMany(a => a.Books)
+    .WithMany(b => b.Authors);
+```
+
+---
+
+## 📏 Property Configuration
+
+### Required
+```csharp
+modelBuilder.Entity<Entity>()
+    .Property(e => e.PropertyName)
+    .IsRequired();
+```
+
+### Max Length
+```csharp
+modelBuilder.Entity<Entity>()
+    .Property(e => e.Name)
+    .HasMaxLength(100);
+```
+
+### Decimal Precision
+```csharp
+modelBuilder.Entity<Entity>()
+    .Property(e => e.Amount)
+    .HasPrecision(18, 2);
+```
+
+### Default Value
+```csharp
+modelBuilder.Entity<Entity>()
+    .Property(e => e.IsActive)
+    .HasDefaultValue(true);
+```
+
+---
+
+## 📆 Date/Time Conversion (for `DateOnly`, `TimeOnly`)
+```csharp
+modelBuilder.Entity<Entity>()
+    .Property(e => e.DateOnlyProperty)
+    .HasConversion(
+        v => v.ToDateTime(TimeOnly.MinValue),
+        v => DateOnly.FromDateTime(v))
+    .HasColumnType("date");
+```
+
+---
+
+## 🧾 Table and Column Names
+
+### Rename Table
+```csharp
+modelBuilder.Entity<Patient>().ToTable("tbl_Patients");
+```
+
+### Rename Column
+```csharp
+modelBuilder.Entity<Patient>()
+    .Property(p => p.FirstName)
+    .HasColumnName("GivenName");
+```
+
+---
+
+## 🧩 Composite Key
+```csharp
+modelBuilder.Entity<SomeEntity>()
+    .HasKey(e => new { e.KeyPart1, e.KeyPart2 });
+```
+
+---
+
+## 🔒 Unique Index
+```csharp
+modelBuilder.Entity<User>()
+    .HasIndex(u => u.Email)
+    .IsUnique();
+```
+
+---
+
+## 🧹 Optional Cleanup Tip
+```csharp
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    ConfigurePatients(modelBuilder);
+    ConfigurePayments(modelBuilder);
+    // etc.
+}
+
+private void ConfigurePatients(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Patient>()
+        .Property(p => p.FirstName)
+        .IsRequired();
+}
+```
