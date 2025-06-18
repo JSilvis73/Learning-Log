@@ -1,0 +1,22 @@
+## 🔄 Renaming a .NET Project (e.g., MyMed → MyPAS)
+
+### Date: June 18, 2025
+
+I had to rename my project from `MyMed` to `MyPAS`. Here's what I learned and how I did it cleanly.
+
+### ✅ Steps:
+1. **Find and Replace All References**
+   - Searched for `MyMed` and replaced with `MyPAS` across the entire backend project.
+
+2. **Rename Files and Folders**
+   - Renamed all files containing `MyMed` in the name (e.g., `MyMedContext.cs` → `MyPASContext.cs`)
+   - Renamed the `.csproj` file and folder (e.g., `MyMed-Backend.csproj` → `MyPAS-Backend.csproj`)
+
+3. **Update Solution File**
+   - Removed the old project from the solution.
+   - Added the renamed project back to the solution.
+
+4. **Rebuild Project**
+   ```bash
+   dotnet clean
+   dotnet build
