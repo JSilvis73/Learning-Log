@@ -25,3 +25,88 @@ Completed "Describe the Benefits of Using Cloud Services" module — learned abo
 June 17, 2025
 - Completed Microsoft Azure Fundamentals: Describe cloud concepts
 - Learned about Iaas, Paas and Saas.
+
+
+
+# ☁️ Azure Fundamentals – Core Architectural Components (Learning Log)
+
+Module: [Describe core architectural components of Azure](https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure)
+
+---
+
+## 🏗️ Core Components of Azure Architecture
+
+### 1. **Regions**
+- Geographical areas with one or more datacenters.
+- Examples: East US, West Europe, Southeast Asia.
+- Important for **latency**, **compliance**, and **redundancy**.
+
+### 2. **Availability Zones**
+- Physically separate locations within a region.
+- Provide high availability through isolation.
+- Used for mission-critical apps that need **99.99% uptime**.
+
+### 3. **Resource Groups**
+- Logical containers for grouping related resources.
+- Resources in a group share the same lifecycle (create, update, delete together).
+- Helps organize and manage billing, access, and deployment.
+
+### 4. **Azure Resource Manager (ARM)**
+- Deployment and management layer.
+- Manages infrastructure through templates and declarative configuration.
+- Supports **RBAC**, tagging, and **template-based deployments** (Bicep, ARM templates).
+
+---
+
+## 🧱 Azure Compute Options
+
+### 1. **Virtual Machines (VMs)**
+- Windows/Linux-based VMs.
+- Full control over OS and runtime.
+- Scales manually or via VM scale sets.
+
+### 2. **App Services**
+- PaaS for hosting web apps, REST APIs.
+- Handles scaling, patching, and high availability automatically.
+
+### 3. **Azure Functions**
+- Serverless compute; event-driven.
+- Great for background jobs, APIs, and automation.
+
+---
+
+## 📦 Azure Networking Components
+
+### 1. **Virtual Network (VNet)**
+- Private network space in Azure.
+- Similar to traditional on-prem networking.
+- Supports subnets, routing, firewalls, peering.
+
+### 2. **Load Balancer**
+- Distributes traffic across multiple VMs.
+- Layer 4 (TCP/UDP).
+
+### 3. **Application Gateway**
+- Layer 7 load balancer.
+- Supports SSL termination, WAF (Web Application Firewall), path-based routing.
+
+### 4. **VPN Gateway & ExpressRoute**
+- Secure connections between Azure and on-prem environments.
+- VPN uses public internet; ExpressRoute uses private connection.
+
+---
+
+## 📂 Summary
+| Component         | Purpose                             |
+|------------------|-------------------------------------|
+| Region           | Location of your resources          |
+| Availability Zone| Redundancy within region            |
+| Resource Group   | Logical grouping of resources       |
+| ARM              | Management/deployment layer         |
+| VM / App Service | Compute options                     |
+| VNet / Gateway   | Networking and secure connections   |
+
+---
+
+📝 Next step: Start building small projects using VNets, App Services, or Functions to apply these concepts.
+
