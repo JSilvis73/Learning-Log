@@ -105,7 +105,34 @@ Module: [Describe core architectural components of Azure](https://learn.microsof
 | VM / App Service | Compute options                     |
 | VNet / Gateway   | Networking and secure connections   |
 
+----------------------------------------------------------------------------------------------------------------------
+
+June 24 2025
+
+Azure Fundamentals – Describe Azure Compute and Networking Services
+
+**Module Completed:** Describe Azure compute and networking services  
+**Status:** ✅ Passed  
+**Achievement:** Badge earned
+
 ---
 
-📝 Next step: Start building small projects using VNets, App Services, or Functions to apply these concepts.
+### 🧠 Concepts Learned
+
+#### ⚙️ Compute Services
+- **Azure Virtual Machines (VMs):** Infrastructure-as-a-Service (IaaS) option for full OS control.
+- **Azure App Service:** Platform-as-a-Service (PaaS) hosting for web apps and APIs, including autoscaling, deployment slots, and CI/CD support.
+- **Azure Functions:** Serverless compute, event-driven, great for lightweight or background tasks.
+- **Azure Container Instances (ACI):** Quick, simple container deployment without managing infrastructure.
+- **Azure Kubernetes Service (AKS):** Full container orchestration for large-scale applications using Kubernetes.
+
+#### 🌐 Networking Services
+- **Virtual Network (VNet):** A private network space within Azure, enabling secure communication between resources.
+- **VPN Gateway:** Provides secure, encrypted connections between on-prem and Azure VNets.
+- **ExpressRoute:** Private, high-speed connection from on-prem to Azure (bypasses public internet).
+- **Load Balancer:** Layer 4 traffic distribution (TCP/UDP), great for high availability.
+- **Application Gateway:** Layer 7 traffic management, with support for SSL termination and web application firewall (WAF).
+- **Azure DNS:** Provides ultra-fast, secure domain name resolution.
+
+
 
