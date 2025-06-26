@@ -135,4 +135,58 @@ Azure Fundamentals – Describe Azure Compute and Networking Services
 - **Azure DNS:** Provides ultra-fast, secure domain name resolution.
 
 
+June 27, 2025
+💾 Azure Fundamentals – Describe Azure Storage Services
+Module Completed: Describe Azure storage services
+Status: ✅ Module assessment passed
+Achievement: Badge earned
 
+📘 Concepts Covered
+📦 Azure Storage Types
+Blob Storage
+Stores unstructured data like images, videos, documents, backups.
+Optimized for large amounts of data.
+Tiers: Hot, Cool, Archive.
+
+Disk Storage
+Used with Azure VMs for OS and data disks.
+High-performance SSD and HDD options.
+
+File Storage
+Fully managed file shares using SMB protocol.
+Supports lift-and-shift scenarios, and on-prem integration.
+
+Queue Storage
+Messaging store for reliable asynchronous communication between components.
+
+Table Storage
+NoSQL key-value store for structured data.
+Good for large-scale data with fast access needs.
+
+🔐 Storage Access & Security
+Shared Access Signature (SAS):
+Provides delegated, time-limited access to storage resources.
+
+Storage Account Keys:
+Primary and secondary keys provide full access — should be rotated regularly.
+
+Azure AD Integration:
+Modern, role-based access via Azure Active Directory.
+
+🔄 Redundancy & Replication Options
+LRS (Locally Redundant Storage)
+Replicates data within a single datacenter.
+
+GRS (Geo-Redundant Storage)
+Replicates across regions for disaster recovery.
+
+ZRS (Zone-Redundant Storage)
+Replicates across availability zones in one region.
+
+🧠 Summary Table
+Storage Type	Purpose	Use Case
+Blob Storage	Unstructured data	Images, videos, backups
+File Storage	SMB-compatible file shares	Lift-and-shift apps, shared files
+Queue Storage	Async messaging	Decoupled systems, event-driven
+Table Storage	NoSQL structured data	Key-value lookups, large datasets
+Disk Storage	VM disks	OS, temp, and data disks
