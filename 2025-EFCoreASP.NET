@@ -1,0 +1,32 @@
+2025 Dotnet-Entity-ASP
+
+[Frontend: React]
+     |
+     |  HTTP Requests (fetch, axios)
+     v
+[ASP.NET Core (Web API)]
+ ┌────────────────────────────────────────────┐
+ │ Controllers (e.g., PatientController)      │
+ │   - Route endpoints like /api/patients     │
+ │   - Handle GET/POST/PUT/DELETE             │
+ │   - Use services or DbContext to work      │
+ └────────────────────────────────────────────┘
+     |
+     | Calls to
+     v
+[Entity Framework Core (ORM)]
+ ┌────────────────────────────────────────────┐
+ │ DbContext (e.g., MyPASContext)             │
+ │   - Contains DbSet<Patient>, etc.          │
+ │   - Handles tracking, querying, saving     │
+ │ Fluent API / Annotations                   │
+ │   - ModelBuilder defines relationships     │
+ └────────────────────────────────────────────┘
+     |
+     | Generates SQL queries / commands
+     v
+[SQL Server Database]
+ ┌────────────────────────────────────────────┐
+ │ Tables: Patients, Services, Payments       │
+ │ Data stored & queried here                 │
+ └────────────────────────────────────────────┘
