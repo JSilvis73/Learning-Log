@@ -1,0 +1,62 @@
+Date: June 25, 2025
+Topic: Microsoft ASP.NET Core Identity
+
+🆔 What I Learned: ASP.NET Core Identity (Authentication System)
+✅ Overview
+ASP.NET Core Identity is Microsoft’s built-in authentication & user management system.
+
+Provides secure and extensible tools to register, login, manage roles, and handle claims-based authorization.
+
+🧱 Core Concepts
+Term	Meaning
+IdentityUser	Built-in user class (can be extended)
+IdentityRole	Represents roles like “Admin”, “User”
+UserManager	Service for creating & managing users
+SignInManager	Service for login/logout/sign-in flows
+RoleManager	Create, delete, assign roles
+ApplicationDbContext	EF DbContext that includes all Identity tables
+
+🗃️ Default Identity Tables (via EF Core)
+AspNetUsers – Users & credentials
+
+AspNetRoles – Role definitions
+
+AspNetUserRoles – Maps users to roles
+
+AspNetUserClaims – Claim-based permissions
+
+AspNetUserTokens – Password reset, 2FA, etc.
+
+🔐 Security Built In
+Passwords are hashed and never stored as plain text.
+
+Middleware handles auth checks with User.IsInRole(), [Authorize], or policies.
+
+You can customize the user model if needed (e.g. extend IdentityUser).
+
+⚙️ Setup Flow (Summarized)
+Add Identity & EF Core NuGet packages
+
+Configure services in Program.cs
+
+Add ApplicationDbContext that inherits IdentityDbContext
+
+Add authentication middleware
+
+Create/Register/Login users using UserManager and SignInManager
+
+💡 Notes to Self
+Identity integrates naturally with EF Core — good fit for my MyPAS project.
+
+Can scale from cookie-based auth to token-based APIs (JWT).
+
+May want to scaffold or API-wrap Identity instead of Razor Pages since I’m using React frontend.
+
+🔍 Next Steps
+✅ Add Identity packages to backend
+
+✅ Plan user model + login/register endpoints
+
+🔜 Secure API with [Authorize]
+
+🔜 Research token vs. cookie auth for SPA
