@@ -1,0 +1,11 @@
+| 🧩 Concept                         | 💡 Quick Summary                                                                                                                      |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dependency Injection (DI)**      | A way to automatically "inject" needed services (like your database or logger) into classes, making them easier to test and maintain. |
+| **Configuration**                  | Your app's settings and secrets (like connection strings) are stored in files like `appsettings.json` or environment variables.       |
+| **Middleware**                     | Pieces of code that process every HTTP request (e.g., authentication, CORS, routing). You configure these in `Program.cs`.            |
+| **Routing & Controllers**          | Maps HTTP endpoints (e.g., `/api/patients`) to specific methods inside your `Controller` classes.                                     |
+| **Model Binding & Validation**     | Automatically converts incoming JSON or form data into C# models, and validates them using attributes like `[Required]`.              |
+| **Entity Framework Core**          | Handles your database interactions. You define models, generate migrations, and use LINQ to query your database.                      |
+| **DTOs (Data Transfer Objects)**   | Lightweight C# classes used to shape and secure data sent/received via your API (prevents over-posting or leaking info).              |
+| **Authentication & Authorization** | Ensures users are who they say they are, and restricts what actions they can take based on roles or policies.                         |
+| **Logging**                        | Tracks events, errors, and app behavior across environments (for debugging, auditing, etc).                                           |
