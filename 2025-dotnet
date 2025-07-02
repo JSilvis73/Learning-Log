@@ -9,3 +9,37 @@
 | **DTOs (Data Transfer Objects)**   | Lightweight C# classes used to shape and secure data sent/received via your API (prevents over-posting or leaking info).              |
 | **Authentication & Authorization** | Ensures users are who they say they are, and restricts what actions they can take based on roles or policies.                         |
 | **Logging**                        | Tracks events, errors, and app behavior across environments (for debugging, auditing, etc).                                           |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+📘 Learning Log – Understanding Logging Levels in .NET
+Topic: Logging Fundamentals with Serilog in ASP.NET Core
+Project Context: MyPAS (Patient Accounting System)
+
+🪵 What Are Log Levels?
+Log levels represent the severity or importance of an event in your application. They help developers:
+
+Understand what happened
+
+Troubleshoot issues
+
+Monitor runtime behavior in different environments (dev, staging, prod)
+
+🔑 Log Level Summary
+Level	Purpose	Example Use
+🔴 Critical	Fatal errors that crash the app or require immediate attention	Database corruption, system-wide failure
+🟠 Error	Operational errors that prevent specific functionality	API call failed, DB insert threw exception
+🟡 Warning	Unexpected but non-fatal issues	Invalid input, config fallback
+🔵 Information	Normal operations and high-level tracking	User login, service started
+🟢 Debug	Internal app details for developers	Variable values, branch logic
+⚪ Trace	Extremely detailed flow tracking	Deep diagnostics, method call chains
+
+🧠 Key Takeaways
+Information is great for general visibility.
+
+Warning flags odd behavior worth watching.
+
+Error should alert you to failures, especially in integrations.
+
+Critical should rarely appear unless something catastrophic happens.
+
+Use Debug & Trace during development — turn them off in production.
