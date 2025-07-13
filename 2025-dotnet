@@ -33,4 +33,3 @@ Level	Purpose	Example Use
 🟢 Debug	Internal app details for developers	Variable values, branch logic
 ⚪ Trace	Extremely detailed flow tracking	Deep diagnostics, method call chains
 
-
