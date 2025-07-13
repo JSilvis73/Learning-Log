@@ -1,35 +1,7 @@
 Dotnet Cheatsheet
 
-Common Terminal Commands
-  Build Templates
-  
 
-
-
-  Application Commands
-  dotnet build - 
-  dotnet run - 
-  dotnet clean - 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-| 🧩 Concept                         | 💡 Quick Summary                                                                                                                      |
+| Concept                         | 💡 Quick Summary                                                                                                                      |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | **Dependency Injection (DI)**      | A way to automatically "inject" needed services (like your database or logger) into classes, making them easier to test and maintain. |
 | **Configuration**                  | Your app's settings and secrets (like connection strings) are stored in files like `appsettings.json` or environment variables.       |
@@ -42,9 +14,6 @@ Common Terminal Commands
 | **Logging**                        | Tracks events, errors, and app behavior across environments (for debugging, auditing, etc).                                           |
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-📘 Learning Log – Understanding Logging Levels in .NET
-Topic: Logging Fundamentals with Serilog in ASP.NET Core
-Project Context: MyPAS (Patient Accounting System)
 
 🪵 What Are Log Levels?
 Log levels represent the severity or importance of an event in your application. They help developers:
@@ -64,13 +33,4 @@ Level	Purpose	Example Use
 🟢 Debug	Internal app details for developers	Variable values, branch logic
 ⚪ Trace	Extremely detailed flow tracking	Deep diagnostics, method call chains
 
-🧠 Key Takeaways
-Information is great for general visibility.
 
-Warning flags odd behavior worth watching.
-
-Error should alert you to failures, especially in integrations.
-
-Critical should rarely appear unless something catastrophic happens.
-
-Use Debug & Trace during development — turn them off in production.
