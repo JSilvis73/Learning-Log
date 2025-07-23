@@ -1,0 +1,113 @@
+Debugging & Exceptions
+
+2025/07/22
+Been working on dotnet certification. Here are some notes about the debugging & exception handling. These notes are intended for study of microsoft technologies.
+
+Dotnet Notes:
+
+Debugging & Exceptions
+
+Errors are the issues that occur during builds.
+Exceptions are errors that occur during runtime.
+
+Exceptions handling is the process that is used to solve these issues. These use "try-catch" statements.
+
+Types of Testing:
+Functional testing - Unit testing - Integration testing - System testing - Acceptance testing
+Nonfunctional testing - Security testing - Performance testing - Usability testing - Compatibility testing
+
+Types of Time Consuming Debugging:
+- Reading through all.
+- BreadCrumbing
+- Rerunning app with different data.
+
+Use a debugger instead.
+A debugger is a program that piggybacks your code and helps you solve exceptions in your code.
+
+"In C#, errors in the program at runtime are propagated through the program by using a mechanism called exceptions. 
+Exceptions are thrown by code that encounters an error and caught by code that can correct the error. Exceptions can be thrown by the .
+NET runtime or by code in a program. Exceptions are represented by classes derived from Exception. 
+Each class identifies the type of exception and contains properties that have details about the exception." - Microsoft Learn.
+
+The term Throw and Catch come from the dotnet runtime environment "throwing" an error and your program "trying" to catch it and if it does
+it will perform an operation in an addempt to correct the error.
+
+Controls panel for the Run and Debug view
+At the top of the RUN AND DEBUG view, you can find the launch controls:
+
+Screenshot showing the Controls panel for the Run and Debug view.
+
+Start debugging. This button (a green arrow) is used to start a debug session.
+
+Launch configurations. This dropdown menu provides access to launch configurations. The selected option is displayed.
+
+Open 'launch.json'. This button (a gear shape) can be used to open the launch.json file, where you can edit the launch configuration if needed.
+
+Views and More Actions. This button (an ellipsis) enables you to show/hide sections of the debug panel as well as the DEBUG CONSOLE panel.
+
+Debug toolbar
+The Debug toolbar provides execution controls while your application is running.
+
+Screenshot showing Debug toolbar user interface.
+
+Pause/Continue. This button can be used to pause execution when the code is running and Continue when code execution has been paused.
+
+Step Over. This button can be used to execute the next method as a single command without inspecting or following its component steps.
+
+Step Into. This button can be used to enter the next method or code line and observe line-by-line execution steps.
+
+
+
+
+Step Out. When inside a method, this button can be used to return to the earlier execution context by completing all remaining lines of the current method as though they were a single command.
+
+Restart. This button can be used to terminate the current program execution and start debugging again using the current configuration.
+
+Stop. This button can be used to terminate the current program execution.
+
+
+Breakpoints
+Breakpoints are points in your code that caused the execution of the program to pause.
+This is so the developer is able to see how the application's state is.
+
+2 Ways to place a breakpoint.
+- click column next to line of code to be paused.
+- Toggle brakpoints from the Run menu.
+
+Can also disable a breakpoint so that it does not activate on the next execution.
+
+Conditional Breakpoint - a breakpoint that pauses execution only when the criteria are met EX: i > 3.
+
+Hit Count & Logpoint
+Hit Count is a specific number of times the breakpoint must be encountered before it will 'break' execution.
+Logpoint is a varient of a breakpoint where instead of pausing execution it logs the message to the console.
+Logpoints are especially useful for injecting logging while debugging production environments that cannot be paused or stopped. 
+A Logpoint is represented by a "diamond" shaped icon rather than a filled circle.
+
+Launch Configuration
+
+Attributes of A Launch Configuration
+
+Launch.json file includes one or more launch configurations in the configuration list. 
+Launch configurations use attributes to support different debugging scenerios.
+Attributes:
+name: reader-friendly name assign to the launch config.
+type: type of debugger used for launching.
+request: Request type of launch config.
+
+preLAunchTask: this attribute specifies a task to run before debugging your program.
+The task itself can be found in the tasks.json file, which is in the .vscode folder along with the launch.json file.
+
+Program: This attribute is set to the path of the application dll or .net Core host executable.
+
+cwd:  specifies the working directory of the target process.
+args: arguments that are passed to the program at launch. None by default.
+console: specifies the type of console that's used when the application is launched. The options are internalConsole, integratedTerminal, and externalTerminal.
+
+Monitoring variable state is an important aspect of code debugging. Unexpected changes in variable state will often help to identify logic errors in your code.
+
+Debugger Sections
+Variables - This lets you monitor local variables to the code block you are on.
+Watch - This lets you keep an eye on a variables state throughout the application even if it's not local.
+Call Stack - Each time the program enters a method and into another method it adds a layer. These layers are stacked on top of eachother in order from when they 
+were invoked. The CALL STACK section is useful when you're trying to find the source location for an exception or WATCH expression.vgBbG0
