@@ -49,3 +49,8 @@ Immutability
 Ex: public int Id {get;}
 This examples shows immutability at play. The Id field can not be changed after it is constructed or set even before. It can only be recieved.
 
+Ex: 
+public int Id {get;} - immutable
+public string Name {get; set;} - mutable
+
+Rule of Thumb - If changing it would be dangerous, make it immutable.
