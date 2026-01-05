@@ -1,0 +1,51 @@
+Review of Concepts
+
+C# fundamentals: classes, constructors, static vs instance, immutability
+
+Class is a blueprint for creating objects that hold state and behavior.
+
+  Ex: 
+    class Player
+  {
+    public string Name;
+    public int HP;
+
+    public void Attack() {}
+  }
+
+When we instantiate a class they are seperate from eachother unless we use the word static.
+  var p1 = new Player();
+  var p2 = new Player();
+
+Constructor is a way to ensure the classes start off in a valid state. This is where you valisate the parameters of the class.
+Such as ensuring name is not null, or a field that is important has the information it needs.
+
+    Class Player
+  { 
+    public int Id {get;}
+    public string Name {get;}
+
+    public Player(int id, string name)
+    {
+      if (id < 0) throw new arguementException();
+      if (string.IsNullOrWhiteSpace(name)) throw new ArguementException();
+
+      Id = id;
+      Name = name;
+    }
+  }
+
+Static Vs Instance
+
+Static - Shared between all instances of a class.
+
+In a class the fields like public int HP would be only to the instance of the class. So every player created has their own HP.
+If the field has static in it such as public static int MaxPlayers = 100; That means that all instances of the class share that field.
+This can be used for ids to keep a track via class, but ids are best controlled in the service.
+
+Immutability
+ An object or part of an object that can not be changed after construction.
+
+Ex: public int Id {get;}
+This examples shows immutability at play. The Id field can not be changed after it is constructed or set even before. It can only be recieved.
+
